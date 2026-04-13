@@ -2,3 +2,5 @@ deployment:
   tasks:
     - npm ci
     - npm run build
+    - mkdir -p tmp
+    - touch tmp/restart.txt
