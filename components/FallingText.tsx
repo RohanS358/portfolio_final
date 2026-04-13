@@ -171,10 +171,11 @@ const FallingText: React.FC<FallingTextProps> = ({
     }
     const predictionCtx = predictionCanvas?.getContext('2d') ?? null;
 
-    const draggingBodyRef: { current: Matter.Body | null } = { current: null };
+    type Vec2 = { x: number; y: number };
+    const draggingBodyRef: { current: any | null } = { current: null };
     const mousePosRef = { current: { x: 0, y: 0 } };
 
-    const getLaunchVelocity = (bodyPosition: Matter.Vector, cursorPosition: Matter.Vector) => {
+    const getLaunchVelocity = (bodyPosition: Vec2, cursorPosition: Vec2) => {
       const rawVelocity = {
         x: (bodyPosition.x - cursorPosition.x) * launchStrength,
         y: (bodyPosition.y - cursorPosition.y) * launchStrength
