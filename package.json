@@ -21,6 +21,7 @@
     "typescript": "^5"
   },
   "devDependencies": {
+    "@types/matter-js": "^0.20.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.3"
   }
