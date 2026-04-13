@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // Constrained shared hosting may fail to spawn multiple worker processes.
+    cpus: 1,
+    workerThreads: true,
+    turbopackPluginRuntimeStrategy: "workerThreads",
+    parallelServerCompiles: false,
+    parallelServerBuildTraces: false,
+  },
 };
 
 export default nextConfig;
